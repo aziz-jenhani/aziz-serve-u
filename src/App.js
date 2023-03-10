@@ -7,9 +7,11 @@ import Orders from "./components/pages/Oreders";
 import Tables from "./components/pages/Tables";
 
 import Home from "./components/Home";
+import { ToastContainer } from "react-toastify";
 function App() {
   return (
     <div className="App">
+      <ToastContainer/>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />}>

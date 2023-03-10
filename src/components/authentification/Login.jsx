@@ -7,6 +7,11 @@ import { TextField } from "./TextField";
 import 'react-toastify/dist/ReactToastify.css'; // import first
 import { toast } from "react-toastify";
 
+
+const errorMessages = {
+  'USER_IS_NOT_VERIFIED_YET': "Oops, User is not verified yet!",
+}
+
 const Login = () => {
   /*const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");*/
@@ -44,6 +49,9 @@ const Login = () => {
       .then((res) => {
         return res.json();
     }).then((resp) => {
+if (resp?.message) {
+  toast.error(errorMessages[resp.message]);
+}
         console.log(resp)
         if (Object.keys(resp).length === 0) {
             toast.error('Login failed, invalid credentials');
@@ -53,38 +61,13 @@ const Login = () => {
               sessionStorage.setItem('email',values.email);
               navigate('/')
             }else{
-              toast.error('Please Enter valid credentials');
           }
       }
         
     }).catch((err) => {
         toast.error('Login Failed due to :' + err.message);
     });
-     /*
-      
-      let inputobj={"username": values.email,
-      "password": values.password};
-      fetch("http://localhost:8000/users",{
-          method:'POST',
-          headers:{'content-type':'application/json'},
-          body:JSON.stringify(inputobj)
-      }).then((res) => {
-          return res.json();
-      }).then((resp) => {
-          console.log(resp)
-          if (Object.keys(resp).length === 0) {
-              toast.error('Login failed, invalid credentials');
-          }else{
-               toast.success('Success');
-               sessionStorage.setItem('email',values.email);
-               sessionStorage.setItem('jwttoken',resp.jwtToken);
-
-          }
-          
-      }).catch((err) => {
-          toast.error('Login Failed due to :' + err.message);
-      });
-     */
+     
   
   }
   return (

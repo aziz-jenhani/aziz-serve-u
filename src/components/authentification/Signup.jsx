@@ -7,19 +7,20 @@ import { TextField } from "./TextField";
 
 const Signup2 = () => {
     const initialValue = {
-        restaurantName: '',
-        phoneNumber: '',
         email: '',
         password: '',
+        name: '',
+        phoneNumber: '',
+
     }
    
     
     const validate = yup.object({
-        restaurantName: yup.string()
+        name: yup.string()
             .max(50, "Must be 50 characters or less")
             .required("Required"),
         phoneNumber: yup.string()
-            .matches(/^\d{10}$/, "Invalid phone number")
+            .matches(/^[0-9]{8,8}$/, "Invalid phone number")
             .required("Required"),
         email: yup.string()
             .email("Invalid email address")
@@ -40,16 +41,17 @@ const Signup2 = () => {
         
         const regobj = {
             
-            id: values.email,
-            restaurantName: values.restaurantName,
+            email: values.email,
+            password: values.password, 
+            name: values.name,
             phoneNumber: values.phoneNumber,
-            password: values.password,  }
-            console.log(regobj)
-            fetch("http://localhost:8000/users", {
+             }
+            console.log(typeof(regobj))
+            fetch("http://localhost:3001/api/web/auth/sign-up", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
-                Accept: "application/json",
+                "Accept": "application/json",
                 "Access-Control-Allow-Origin": "*",
              },
              body: JSON.stringify(regobj),
@@ -57,6 +59,7 @@ const Signup2 = () => {
             .then((res) => res.json())
             .then((data) => {
                 console.log(data, "userRegister");
+                actions.resetForm();
 
             });
             actions.setSubmitting(false);
@@ -84,7 +87,7 @@ const Signup2 = () => {
                              {({ isSubmitting }) => (
                             <Form className="space-y-2 md:space-y-6 w-full" >
 
-                                <TextField label="Restaurant name" name="restaurantName" type="text"  placeholder="Planet food, Cheesy food, Restaurant Le Mediterranee ..."/>
+                                <TextField label="Restaurant name" name="name" type="text"  placeholder="Planet food, Cheesy food, Restaurant Le Mediterranee ..."/>
                                 <TextField label="Phone number" name="phoneNumber" type="text" placeholder="+216 55 675 123"/>
                                 <TextField label="Email" name="email" type="email" placeholder="jhon.doe@gmail.com"/>
                                 <TextField label="Password" name="password" type="password" placeholder="••••••••••••••"/>
