@@ -1,0 +1,39 @@
+{
+  "items": [
+    {
+      "id": 4,
+      "name": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+      "price": 109.95,
+      "category": "Burguers ",
+      "image": "https://img.freepik.com/photos-gratuite/pizza-mixte-divers-ingredients_140725-3790.jpg?w=360"
+    },
+    {
+      "id": 5,
+      "name": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+      "price": 109.95,
+      "category": "Breakfast",
+      "image": "https://img.freepik.com/photos-gratuite/pizza-mixte-divers-ingredients_140725-3790.jpg?w=360"
+    },
+    {
+      "id": 6,
+      "name": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+      "price": 100.95,
+      "category": "Salad",
+      "image": "https://img.freepik.com/photos-gratuite/pizza-mixte-divers-ingredients_140725-3790.jpg?w=360"
+    },
+    {
+      "id": 7,
+      "name": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+      "price": 100.95,
+      "category": "Macaronie",
+      "image": "https://img.freepik.com/photos-gratuite/pizza-mixte-divers-ingredients_140725-3790.jpg?w=360"
+    },
+    {
+      "id": 8,
+      "name": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+      "price": 100.95,
+      "category": "Macaronie",
+      "image": "https://img.freepik.com/photos-gratuite/pizza-mixte-divers-ingredients_140725-3790.jpg?w=360"
+    }
+  ]
+}

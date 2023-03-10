@@ -1,0 +1,22 @@
+{
+  "users": [
+    {
+      "id": "azizjenhani11@gmail.com1",
+      "restaurantName": "hama",
+      "phoneNumber": "1234566001",
+      "password": "Azzz20.555d5"
+    },
+    {
+      "id": "azizjenhani11@gmail.com",
+      "restaurantName": "AzizFood",
+      "phoneNumber": "2162810400",
+      "password": "Aziz123456789."
+    },
+    {
+      "id": "azizjenhani1@gmail.com",
+      "restaurantName": "Aziz",
+      "phoneNumber": "2010255687",
+      "password": "Azizjenhani1@gmail.com"
+    }
+  ]
+}
